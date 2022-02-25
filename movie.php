@@ -2,7 +2,6 @@
 class MovieCard {
     public $movieName;
     public $movieDate;
-    public $moviePoster;
     public $movieDescription;
     public $movieOriginalLanguage;
     
@@ -10,7 +9,6 @@ class MovieCard {
     function __construct(array $movieDetails) {
         $this->movieName = $movieDetails["movieName"];    
         $this->movieDate = $movieDetails["movieDate"];    
-        $this->moviePoster = $movieDetails["moviePoster"];    
         $this->movieDescription = $movieDetails["movieDescription"];    
         $this->movieOriginalLanguage = $movieDetails["movieOriginalLanguage"];    
     }
