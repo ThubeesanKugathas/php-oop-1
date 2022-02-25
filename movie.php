@@ -15,7 +15,7 @@ class MovieCard {
 
     // function stamp to return data in html
     public function stamp() {
-        return "<div class='ms_card'><h1>" . $this->movieName . "</h1>" . 
+        return "<div class='ms_card'><h2>" . $this->movieName . "</h2>" . 
                 "<span>" . $this->movieOriginalLanguage . "</span>" . 
                 "<p>" . $this->movieDate . "</p>" . 
                 "<p>" . $this->movieDescription . "</p></div>";
@@ -61,9 +61,9 @@ $movieList = array($firstMovie, $secondMovie, $thirdMovie);
 </head>
 <body>
     <header>
-        <h1>Movie List</h1>
+        <h1 class="m-0">Movie List</h1>
     </header>
-    <main>
+    <main class="py-4">
         <div class="container">
             <div class="row">
                 <!-- cicle for to repeat the data -->

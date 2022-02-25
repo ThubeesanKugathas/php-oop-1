@@ -1,3 +1,19 @@
+/* HEADER */
+
+header h1 {
+    height: 80px;
+    background-color: #7c81ca;
+    text-align: center;
+    line-height: 80px;
+}
+
+main {
+    background-color: #4148a0;
+    height: calc(100vh - 80px);
+}
+
 .ms_card {
-    width: calc(100% / 3);
+    width: calc((100% - 60px)/ 3);
+    background-color: white;
+    margin: 0 10px;
 }
