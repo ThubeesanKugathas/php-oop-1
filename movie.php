@@ -28,7 +28,6 @@ class MovieCard {
 $firstMovie = new MovieCard([
     "movieName" => "Spider-Man: No Way Home",
     "movieDate" => "15-12-2021",
-    "moviePoster" => "",
     "movieDescription" => "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
     "movieOriginalLanguage" => "EN"
 ]);
@@ -36,7 +35,6 @@ $firstMovie = new MovieCard([
 $secondMovie = new MovieCard([
     "movieName" => "The Eternals",
     "movieDate" => "03-11-2021",
-    "moviePoster" => "",
     "movieDescription" => "Following the events of Avengers: Endgame (2019), an unexpected tragedy forces the Eternals, ancient aliens who have been living on Earth in secret for thousands of years, out of the shadows to reunite against mankind's most ancient enemy, the Deviants.",
     "movieOriginalLanguage" => "EN"
 ]);
@@ -44,7 +42,6 @@ $secondMovie = new MovieCard([
 $thirdMovie = new MovieCard([
     "movieName" => "Shang-chi & The Legend of the Ten Rings",
     "movieDate" => "02-09-2021",
-    "moviePoster" => "",
     "movieDescription" => "Shang-Chi, the master of weaponry-based Kung Fu, is forced to confront his past after being drawn into the Ten Rings organization.",
     "movieOriginalLanguage" => "EN"
 ]);
