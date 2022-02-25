@@ -8,7 +8,7 @@ class MovieCard {
     // function construct + control array
     function __construct(array $movieDetails) {
         $this->movieName = $movieDetails["movieName"];    
-        $this->movieDate = $movieDetails["movieDate"];    
+        $this->movieDate = date_format(date_create($movieDetails["movieDate"]), "Y");    
         $this->movieDescription = $movieDetails["movieDescription"];    
         $this->movieOriginalLanguage = $movieDetails["movieOriginalLanguage"];    
     }
@@ -17,7 +17,7 @@ class MovieCard {
     public function stamp() {
         return "<div class='ms_card'><h2>Title: " . $this->movieName . "</h2>" . 
                 "<span>Language: " . $this->movieOriginalLanguage . "</span>" . 
-                "<p>Year: " . date_format(date_create($this->movieDate), "Y") . "</p>" . 
+                "<p>Year: " . $this->movieDate . "</p>" . 
                 "<p>Plot-Summary: " . $this->movieDescription . "</p></div>";
     }
 }
@@ -44,6 +44,7 @@ $thirdMovie = new MovieCard([
     "movieOriginalLanguage" => "EN"
 ]);
 
+// creation of an array for every instance
 $movieList = array($firstMovie, $secondMovie, $thirdMovie);
 
 ?>
