@@ -15,10 +15,10 @@ class MovieCard {
 
     // function stamp to return data in html
     public function stamp() {
-        return "<div class='ms_card'><h2>" . $this->movieName . "</h2>" . 
-                "<span>" . $this->movieOriginalLanguage . "</span>" . 
-                "<p>" . $this->movieDate . "</p>" . 
-                "<p>" . $this->movieDescription . "</p></div>";
+        return "<div class='ms_card'><h2>Title: " . $this->movieName . "</h2>" . 
+                "<span>Language: " . $this->movieOriginalLanguage . "</span>" . 
+                "<p>Year: " . date_format(date_create($this->movieDate), "Y") . "</p>" . 
+                "<p>Plot-Summary: " . $this->movieDescription . "</p></div>";
     }
 }
 
