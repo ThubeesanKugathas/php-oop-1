@@ -1,18 +1,59 @@
 <?php
-
 class MovieCard {
     public $movieName;
     public $movieDate;
     public $moviePoster;
     public $movieDescription;
     public $movieOriginalLanguage;
+    
+    // function construct + control array
+    function __construct(array $movieDetails) {
+        $this->movieName = $movieDetails["movieName"];    
+        $this->movieDate = $movieDetails["movieDate"];    
+        $this->moviePoster = $movieDetails["moviePoster"];    
+        $this->movieDescription = $movieDetails["movieDescription"];    
+        $this->movieOriginalLanguage = $movieDetails["movieOriginalLanguage"];    
+    }
+
+    // function stamp to return data in html
+    public function stamp() {
+        return "<div class='ms_card'><h1>" . $this->movieName . "</h1>" . 
+                "<span>" . $this->movieOriginalLanguage . "</span>" . 
+                "<p>" . $this->movieDate . "</p>" . 
+                "<p>" . $this->movieDescription . "</p></div>";
+    }
 }
 
+// singoli object in array
+$firstMovie = new MovieCard([
+    "movieName" => "Spider-Man: No Way Home",
+    "movieDate" => "15-12-2021",
+    "moviePoster" => "",
+    "movieDescription" => "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+    "movieOriginalLanguage" => "EN"
+]);
 
+$secondMovie = new MovieCard([
+    "movieName" => "The Eternals",
+    "movieDate" => "03-11-2021",
+    "moviePoster" => "",
+    "movieDescription" => "Following the events of Avengers: Endgame (2019), an unexpected tragedy forces the Eternals, ancient aliens who have been living on Earth in secret for thousands of years, out of the shadows to reunite against mankind's most ancient enemy, the Deviants.",
+    "movieOriginalLanguage" => "EN"
+]);
+
+$thirdMovie = new MovieCard([
+    "movieName" => "Shang-chi & The Legend of the Ten Rings",
+    "movieDate" => "02-09-2021",
+    "moviePoster" => "",
+    "movieDescription" => "Shang-Chi, the master of weaponry-based Kung Fu, is forced to confront his past after being drawn into the Ten Rings organization.",
+    "movieOriginalLanguage" => "EN"
+]);
+
+$movieList = array($firstMovie, $secondMovie, $thirdMovie);
 
 ?>
 
-
+<!-- ------------------------------------------------------------------------------------- -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +65,20 @@ class MovieCard {
     <title>PHP-OOP</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Movie List</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <!-- cicle for to repeat the data -->
+                <?php 
+                    for($i = 0; $i < count($movieList); $i++) {
+                        echo $movieList[$i]->stamp();
+                    }
+                ?>
+            </div>
+        </div>
+    </main>    
 </body>
 </html>
